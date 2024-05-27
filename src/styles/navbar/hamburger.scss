@@ -1,11 +1,12 @@
 div.hamburger {
     position: relative;
+    margin-right: 1rem;
     width: 34px;
     height: 26px;
 
     & div.line {
         width: 100%;
-        border: 1px solid black;
+        border: 1px solid white;
         position: absolute;
         top: 0;
 

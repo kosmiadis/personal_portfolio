@@ -1,73 +1,28 @@
 @import url('./hamburger.scss');
 
 :root {
-    --curtain_menu_bg_color: rgb(0,0,0,0.9);
     --navbar-primary-color: rgb(164, 44, 255);
-    --navbar-primary-hover-color: rgb(150, 12, 255);
-    --navbar-li-font-color: #ffffff;
+    --menu-bg-color: #231146;
+    --navbar-contact-btn-hover-color: rgb(144, 0, 255);
+    --navbar-font-color: #ffffff;
+    --navbar-mobile-hover-font-color: #fff;
+    --navbar-contact-btn-color: white;
+    --navbar-mobile-contact-btn-hover-color: rgb(234, 233, 233);
+    --gradient-secondary-color: #e600ff;
 }
 
 div.navbar {
+    max-width: 1400px;
     padding: 2rem 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: relative;
 
     & * {
         font-family: "Poppins", sans-serif; 
     }
 
-    & div.navbar_lang_wrapper {
-        position: fixed;
-        top: 90%;
-        right: 2%;
-
-        & div.change_lang_button {
-            
-            & button {
-                outline: none;
-                border: none;
-                background-color: none;
-                
-            }
-        }
-
-        select {
-            background-color: var(--navbar-primary-color); /* Light grey background */
-            border-radius: 4px; /* Rounded corners */
-            padding: 8px; /* Padding inside the select box */
-            font-size: 16px; /* Font size */
-            color: white; /* Text color */
-            width: 170px; /* Width of the select box */
-            appearance: none; /* Remove default arrow */
-            -webkit-appearance: none; /* Remove default arrow in Safari */
-            -moz-appearance: none; /* Remove default arrow in Firefox */
-        }
-
-        /* Add a custom arrow */
-        select::after {
-            content: "9"; /* Unicode for down arrow */
-            font-size: 12px;
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            pointer-events: none; /* Make sure arrow doesn't block click events */
-        }
-
-        /* Style the dropdown options */
-        select option {
-            background-color: var(--navbar-primary-color); /* White background */
-            color: white; /* Text color */
-            padding: 8px; /* Padding inside options */
-        }
-
-        
-        select:focus {
-            outline: none; /* Remove default outline */
-        }
-    }
+    
 
     div.navbar_brand_wrapper > #brand{
         display: flex;
@@ -82,8 +37,11 @@ div.navbar {
         & span {
             margin-inline: 3px;
             font-size: 1.1rem;
-            color: var(--navbar-primary-color);
+            background: linear-gradient(to right, var(--navbar-primary-color) 10%, var(--gradient-secondary-color));
             font-weight: 600;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+          
         }
     }
 
@@ -91,51 +49,88 @@ div.navbar {
         position: absolute;
         top: 0;
         left: 0;
-        background-color: var(--navbar-primary-color);
+        background-color: var(--menu-bg-color);
         opacity: 0;
         display: none;
         grid-template-columns: 100%;
         flex-direction: column;
-        width: 100%;
         min-height: 100vh;
+        width: 100%;
         transition: opacity 0.2s ease-in;
 
         & div.navbar_actions_wrapper > ul {
+            text-align: center;
+            width: min-content;
+            margin: auto;
             padding: 0;
             list-style-type: none;
             display: flex;
             flex-direction: column; 
-            gap: 12px;
+            gap: 2rem;
 
             & li {
-                color: var(--navbar-li-font-color);
+                color: var(--navbar-font-color);
+                font-size: 2rem;
+                transition: 0.2s ease-in-out;
+                font-weight: 600;
+                &::after {
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    content: '';
+                    width: 0;
+                    border: 2px solid transparent;
+                    transform: rotate(0deg);
+                    transition: all 0.3s ease-in-out;
+                }
+
+                &:hover {
+                    
+                    cursor: pointer;
+                    background: linear-gradient(to right, var(--navbar-primary-color) 10%, #e600ff);;
+                    transition: background-image 0.2s ease-in-out;
+                    background-clip: text;
+                    -webkit-text-fill-color: transparent;
+
+                    &::after {
+                        width: 100%;
+                        border-color: var(--navbar-font-color);
+                    }
+                }
             }
         }
 
+        & div.navbar_contact_wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin: auto;
+        }
         & div.navbar_contact_wrapper > button {
             outline: none;
             border: none;
-            background-color: var(--navbar-primary-color);
+            background-color: var(--navbar-contact-btn-color);
             padding: 1rem 1.6rem;
-            margin-inline: 1.5rem;
+            margin-inline: auto;
             border-radius: 12px;
-            color: white;
+            color: black;
             font-weight: 600;
             font-size: 1rem;
+            transition: 0.2s ease-in-out;
+
             &:hover {
                 cursor: pointer;
-            
+                background-color: var(--navbar-mobile-contact-btn-hover-color);
+                box-shadow: 0px 0px 25px rgb(255,255,255, 0.4)
             }
         }
-
-       
     }
 }
 
 @media screen and (min-width: 769px) {
 
     div.navbar {
-        max-width: 1400px;
+        padding: 1.4rem;
         margin-inline: auto;
         display: flex;
         align-items: center;
@@ -151,6 +146,7 @@ div.navbar {
             min-height: unset;
             top: auto;
             left: auto;
+            align-items: center;
             background-color: unset;
             display: flex;
             flex-direction: row;
@@ -162,47 +158,50 @@ div.navbar {
             }
             
             & div.navbar_actions_wrapper > ul {
+                text-align: left;
+                margin: 0;
                 margin-right: 2rem;
                 width: 100%;
                 flex-direction: row;
                 align-items: center;
                 justify-content: space-around;
                 gap: 1rem;
-                color: black;
 
                 & li {
+                    color: var(--navbar-font-color);
                     font-size: 1rem;
                     position: relative;
-                    color: black;
-                    &::after {
-                        position: absolute;
-                        top: 100%;
-                        left: 0;
-                        content: '';
-                        width: 0;
-                        border: 2px solid transparent;
-                        transform: rotate(0deg);
-                        transition: all 0.3s ease-in-out;
-                    }
-
+    
                     &:hover {
                         cursor: pointer;
                         color: var(--navbar-primary-color);
                         
                         &::after {
-                            border: 2px solid;
+                            border: 2px solid var(--navbar-font-color);
                             width: 100%;
                         }
                     }
                 }
             }
 
-            & div.navbar_contact_wrapper  {
-                
+            & div.navbar_contact_wrapper {
+                width: min-content;
+                margin: 0;
+                & {
+                    button {
+                        background: linear-gradient(to right, var(--navbar-primary-color) 0%, var(--gradient-secondary-color));
+                        color: var(--navbar-font-color);
+                        margin-inline: 1.5rem;
+
+                        
+                        &:hover {
+                            background-color: var(--navbar-contact-btn-hover-color);
+                        }
+                    }
             }
 
-            
-        }
 
+            }
+        }
     }
 }

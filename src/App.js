@@ -1,5 +1,6 @@
-import Hero from './Components/Hero';
+import Hero from './Components/Content/Hero';
 import Navbar from './Components/Navbar';
+import Footer from './Components/Footer';
 import './i18n';
 import { useTranslation } from 'react-i18next';
 
@@ -9,11 +10,12 @@ function App() {
     i18n.changeLanguage(lng);
   };
   
-
   return (
       <div className="App">
-        <Navbar t={t} changeLanguage={changeLanguage}/>
+        <Navbar t={t} />
         <Hero t={t} />
+        
+        <Footer t={t} changeLanguage={changeLanguage}/>
       </div>
   );
 }
