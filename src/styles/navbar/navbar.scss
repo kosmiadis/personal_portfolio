@@ -1,0 +1,208 @@
+@import url('./hamburger.scss');
+
+:root {
+    --curtain_menu_bg_color: rgb(0,0,0,0.9);
+    --navbar-primary-color: rgb(164, 44, 255);
+    --navbar-primary-hover-color: rgb(150, 12, 255);
+    --navbar-li-font-color: #ffffff;
+}
+
+div.navbar {
+    padding: 2rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+
+    & * {
+        font-family: "Poppins", sans-serif; 
+    }
+
+    & div.navbar_lang_wrapper {
+        position: fixed;
+        top: 90%;
+        right: 2%;
+
+        & div.change_lang_button {
+            
+            & button {
+                outline: none;
+                border: none;
+                background-color: none;
+                
+            }
+        }
+
+        select {
+            background-color: var(--navbar-primary-color); /* Light grey background */
+            border-radius: 4px; /* Rounded corners */
+            padding: 8px; /* Padding inside the select box */
+            font-size: 16px; /* Font size */
+            color: white; /* Text color */
+            width: 170px; /* Width of the select box */
+            appearance: none; /* Remove default arrow */
+            -webkit-appearance: none; /* Remove default arrow in Safari */
+            -moz-appearance: none; /* Remove default arrow in Firefox */
+        }
+
+        /* Add a custom arrow */
+        select::after {
+            content: "9"; /* Unicode for down arrow */
+            font-size: 12px;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none; /* Make sure arrow doesn't block click events */
+        }
+
+        /* Style the dropdown options */
+        select option {
+            background-color: var(--navbar-primary-color); /* White background */
+            color: white; /* Text color */
+            padding: 8px; /* Padding inside options */
+        }
+
+        
+        select:focus {
+            outline: none; /* Remove default outline */
+        }
+    }
+
+    div.navbar_brand_wrapper > #brand{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        & svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        & span {
+            margin-inline: 3px;
+            font-size: 1.1rem;
+            color: var(--navbar-primary-color);
+            font-weight: 600;
+        }
+    }
+
+    div.curtain_menu {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: var(--navbar-primary-color);
+        opacity: 0;
+        display: none;
+        grid-template-columns: 100%;
+        flex-direction: column;
+        width: 100%;
+        min-height: 100vh;
+        transition: opacity 0.2s ease-in;
+
+        & div.navbar_actions_wrapper > ul {
+            padding: 0;
+            list-style-type: none;
+            display: flex;
+            flex-direction: column; 
+            gap: 12px;
+
+            & li {
+                color: var(--navbar-li-font-color);
+            }
+        }
+
+        & div.navbar_contact_wrapper > button {
+            outline: none;
+            border: none;
+            background-color: var(--navbar-primary-color);
+            padding: 1rem 1.6rem;
+            margin-inline: 1.5rem;
+            border-radius: 12px;
+            color: white;
+            font-weight: 600;
+            font-size: 1rem;
+            &:hover {
+                cursor: pointer;
+            
+            }
+        }
+
+       
+    }
+}
+
+@media screen and (min-width: 769px) {
+
+    div.navbar {
+        max-width: 1400px;
+        margin-inline: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        div.hamburger {
+            display: none;
+        }
+
+        div.curtain_menu {
+            position: relative;
+            width: 100%;
+            min-height: unset;
+            top: auto;
+            left: auto;
+            background-color: unset;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            opacity: 1;
+
+            & div.close_hamburger {
+                display: none;
+            }
+            
+            & div.navbar_actions_wrapper > ul {
+                margin-right: 2rem;
+                width: 100%;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-around;
+                gap: 1rem;
+                color: black;
+
+                & li {
+                    font-size: 1rem;
+                    position: relative;
+                    color: black;
+                    &::after {
+                        position: absolute;
+                        top: 100%;
+                        left: 0;
+                        content: '';
+                        width: 0;
+                        border: 2px solid transparent;
+                        transform: rotate(0deg);
+                        transition: all 0.3s ease-in-out;
+                    }
+
+                    &:hover {
+                        cursor: pointer;
+                        color: var(--navbar-primary-color);
+                        
+                        &::after {
+                            border: 2px solid;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+
+            & div.navbar_contact_wrapper  {
+                
+            }
+
+            
+        }
+
+    }
+}
