@@ -14,7 +14,6 @@ function App() {
       <div className="App">
         <Navbar t={t} />
         <Hero t={t} />
-        
         <Footer t={t} changeLanguage={changeLanguage}/>
       </div>
   );

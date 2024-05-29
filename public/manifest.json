@@ -1,8 +1,8 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "personal_portfolio",
+  "name": "Frontend Develop Personal Portfolio",
+  "description": "A Personal Portfolio for a Self-Taught Frontend Developer based in Thessaloniki, Greece. ",
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "categories": ["development", "productivity", "portfolio", "Frontend", "Web Development"]
 }
