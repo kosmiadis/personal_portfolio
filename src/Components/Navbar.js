@@ -58,10 +58,10 @@ const Navbar = ({t}) => {
 
             <div className="navbar_actions_wrapper">
                 <ul>
-                    <li href='#home' onClick={handleMenuOptionClick}>{t('Home')}</li>
-                    <li href='#technologies' onClick={handleMenuOptionClick}>{t('Technologies')}</li>
-                    <li href='#about' onClick={handleMenuOptionClick}>{t('About')}</li>
-                    <li href='#portfolio' onClick={handleMenuOptionClick}>{t('Portfolio')}</li>
+                    <li href='#home' onClick={handleMenuOptionClick}>{t('home')}</li>
+                    <li href='#portfolio' onClick={handleMenuOptionClick}>{t('portfolio')}</li>
+                    <li href='#technologies' onClick={handleMenuOptionClick}>{t('technologies')}</li>
+                    <li href='#about' onClick={handleMenuOptionClick}>{t('about')}</li>
                 </ul>
             </div>
 

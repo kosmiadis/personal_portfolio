@@ -8,6 +8,7 @@
     --navbar-mobile-hover-font-color: #fff;
     --navbar-contact-btn-color: white;
     --navbar-mobile-contact-btn-hover-color: rgb(234, 233, 233);
+    --gradient-primary-color: var(--navbar-primary-color);
     --gradient-secondary-color: #ff325b;
 }
 
@@ -21,8 +22,6 @@ div.navbar {
     & * {
         font-family: "Poppins", sans-serif; 
     }
-
-    
 
     div.navbar_brand_wrapper > #brand{
         display: flex;
@@ -71,8 +70,9 @@ div.navbar {
             & li {
                 color: var(--navbar-font-color);
                 font-size: 2rem;
-                transition: 0.2s ease-in-out;
                 font-weight: 600;
+                padding: 4px 8px;
+
                 &::after {
                     position: absolute;
                     top: 100%;
@@ -85,16 +85,15 @@ div.navbar {
                 }
 
                 &:hover {
-                    
                     cursor: pointer;
                     background: linear-gradient(to right, var(--navbar-primary-color) 10%, #e600ff);;
                     transition: background-image 0.2s ease-in-out;
                     background-clip: text;
-                    -webkit-text-fill-color: transparent;
+                    color: transparent;
 
                     &::after {
                         width: 100%;
-                        border-color: var(--navbar-font-color);
+                        border-color: white;
                     }
                 }
             }
@@ -109,11 +108,11 @@ div.navbar {
         & div.navbar_contact_wrapper > button {
             outline: none;
             border: none;
-            background-color: var(--navbar-contact-btn-color);
             padding: 1rem 1.6rem;
             margin-inline: auto;
             border-radius: 12px;
-            color: black;
+            color: white;
+            background-image: linear-gradient(to right, var(--gradient-primary-color), var(--gradient-secondary-color)) ;
             font-weight: 600;
             font-size: 1rem;
             transition: 0.2s ease-in-out;
@@ -171,6 +170,7 @@ div.navbar {
                     color: var(--navbar-font-color);
                     font-size: 1rem;
                     position: relative;
+                    padding: 0;
     
                     &:hover {
                         cursor: pointer;
