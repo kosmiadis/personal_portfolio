@@ -44,7 +44,6 @@ div.home {
             width: 200px;
             height: 60px;
             border-radius: 3px;
-            background-clip: text;
 
             & > span {
                 background-clip: text;
@@ -55,6 +54,8 @@ div.home {
                 left: 50%;
                 transform: translate(-50%, -50%);
                 z-index: 2;
+                transition: 0.2s ease-in-out;
+                background-image: linear-gradient(to right, var(--navbar-primary-color) 10%, var(--gradient-secondary-color));
             }
 
             &::before {
@@ -81,7 +82,7 @@ div.home {
                 }
                 &::before {
                     z-index: 1;
-                    width: 100%;
+                    width: 200px;
                     border-radius: 3px;
                     background-image: linear-gradient(to right, var(--navbar-primary-color) 10%, var(--gradient-secondary-color));
                 }
@@ -94,9 +95,10 @@ div.home {
             width: 100%;
 
             div.photo_wrapper {
+                margin: auto;
                 width: 250px;
                 height: 250px;
-                border: 2px solid white;
+                border: 2px dashed white;
                 border-radius: 50%;
                 display: flex;
                 flex-direction: column;
@@ -118,11 +120,24 @@ div.home {
 
 @media screen and (min-width: 769px) {
     div.home {
-
         div.home_inner_wrapper {
+            margin-top: 3rem;
+            padding: 1rem;
+            width: 90%;
             display: grid;
-            grid-template-columns: 1fr 45%;
-            width: 100%;
+            grid-template-columns: 1fr auto;
+            
+
+            div.text_content {
+                max-width: 550px;
+            }
+
+            div.me {
+                align-self: start;
+                & div.photo_wrapper {
+                    margin-block: auto;
+                }
+            }
         }
 
     }
