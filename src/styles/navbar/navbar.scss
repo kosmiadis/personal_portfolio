@@ -40,7 +40,6 @@ div.navbar {
             font-weight: 600;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-          
         }
     }
 
@@ -48,7 +47,7 @@ div.navbar {
         position: absolute;
         top: 0;
         left: 0;
-        background-color: var(--menu-bg-color);
+        background-color: var(--body-bg-color);
         opacity: 0;
         display: none;
         grid-template-columns: 100%;

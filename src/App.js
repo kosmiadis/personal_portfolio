@@ -8,9 +8,9 @@ import { useEffect, useState } from 'react';
 import chalk59_img_url from './images/chalk59_img.png';
 import Technologies from './Components/Content/Technologies/Technologies.js';
 import About from './Components/Content/About/About.js';
+import './styles/styles.css';
 
 function App() {
-
   const { t, i18n } = useTranslation();
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
