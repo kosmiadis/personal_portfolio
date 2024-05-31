@@ -11,9 +11,15 @@ const Home = ({t}) => {
   });
 
   const [springs, api] = useSpring(() => ({
-    from: { left: -100, opacity: 0 },
-    to: { left: 0, opacity: 1 },
-    config: { duration: 1200 }, // Adjust the duration as needed
+    from: { 
+      x: -100, 
+      opacity: 0
+    },
+    to: { 
+      x: 0, 
+      opacity: 1
+    },
+    config: { duration: 500 }, // Adjust the duration as needed
   }));
 
   useEffect(() => {
@@ -27,10 +33,8 @@ const Home = ({t}) => {
 
   return (
     <div className='home'>
-        
         <div className="home_inner_wrapper">
-        
-          <animated.div ref={ref} style={{...springs}} className="text_content">
+          <animated.div style={{...springs}} className="text_content">
             <h2 id='hero_heading'>{t('hero_heading')}</h2>
             <h2 id='hero_subheading'>{t('hero_subheading')}</h2>
             <p id='hero_text'>{t('hero_text')}</p>
@@ -43,7 +47,6 @@ const Home = ({t}) => {
           </animated.div>
 
           <animated.button ref={ref} style={{...springs}} id='portfolio_btn'><span>Portfolio</span></animated.button>
-
         </div>
 
     </div>
