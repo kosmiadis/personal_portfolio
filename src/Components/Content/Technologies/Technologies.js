@@ -5,14 +5,14 @@ import AdditionalTechnology from './AdditionalTechnology';
 const Technologies = ({t, technologies, additionalTechnologies}) => {
 
     return (
-    <div className="techonologies">
+    <div className="technologies">
         <div className="technologies_inner_wrapper">
             <div className="technologies_heading">
                 <h2>{t('technologies')}</h2>
             </div>
             
             {technologies.map(technology => (
-                <Technology technology={technology}/>
+                <Technology technology={technology} key={technology.name}/>
             ))}
         </div>
         <div className="additional_technologies_wrapper">

@@ -16,3 +16,12 @@ body > * {
     /*temporary (delete later)*/
     color: white;
 }
+
+div.home, div.projects, div.technologies, div.about {
+    outline: 2px solid white;
+    padding: 1rem;
+    max-width: 1400px;
+    margin:auto;
+    min-height: 100vh;
+    font-family: poppins, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

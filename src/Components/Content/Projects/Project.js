@@ -7,7 +7,7 @@ const Project = ({t, project}) => {
         <div className="project_inner_wrapper">
           
           <div className="img_preview">
-            <img src={img_url} alt={"Chalk59 Preview"}/>
+            <img src={img_url} alt={"Chalk59 Preview"} width='350px'/>
           </div>
 
           <div className="project_text">
