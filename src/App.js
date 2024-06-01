@@ -9,6 +9,8 @@ import chalk59_img_url from './images/chalk59_img.png';
 import Technologies from './Components/Content/Technologies/Technologies.js';
 import About from './Components/Content/About/About.js';
 import './styles/styles.css';
+import greek_flag from './images/GR_flag.png';
+import usa_flag from './images/USA_flag.png';
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -84,6 +86,21 @@ function App() {
 
     }, [t])
 
+    const handleLanguageChange = (e) => {
+      if (e.target.id === 'en') {
+        e.target.id = 'gr'
+        e.target.children[1].src = greek_flag
+        e.target.children[1].classList.remove('usa')
+      
+      }
+      else {
+        e.target.id = 'en'
+        e.target.children[1].src = usa_flag
+        e.target.children[1].classList.add('usa')
+      }
+      changeLanguage(e.target.id)
+    }
+
   return (
       <div className="App">
         <Navbar t={t} />
@@ -92,6 +109,9 @@ function App() {
         <Technologies t={t} technologies={technologies} additionalTechnologies={additionalTechnologies}/>
         <About t={t} storyLine={storyLine}/>
         <Footer t={t} changeLanguage={changeLanguage}/>
+        <div className="lang_select_wrapper">
+            <button id='en' onClick={(e) => handleLanguageChange(e)}><span>{t('language')}</span><img className='usa' src={usa_flag} alt=''/></button>
+        </div>
       </div>
   );
 }

@@ -1,4 +1,5 @@
 {   
+    "language": "English",
     "home": "Home",
     "about": "About",
     "technologies": "Technologies",
@@ -21,4 +22,5 @@
     "2021_story": "In 2021 I started learning Web Development. More specificly, I learnt HTML5 in 2 weeks and CSS3 Basics in 1 Month. Of course I moved to JavaScript later on and until today i try to sharpen my skills day by day.",
     "2023_story": "I started learning React and created a Youtube Channel, in which I upload fitness related content. I learned React fast and I made some small projects.",
     "2024_story": "This is the year that I was introduced to Backend Development, using NodeJS. I became really good with it and I learnt a lot about this framework. I made many projects, including User Authentication, Blog, and Server Side Rendering Landing Pages"
+    
 }

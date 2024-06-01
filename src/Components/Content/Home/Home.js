@@ -6,27 +6,27 @@ import { useEffect } from 'react';
 const Home = ({t}) => {
 
   const { ref, inView } = useInView({
-    triggerOnce: true, // Set to false to trigger every time it comes into view
-    threshold: 0.3, // Adjust as needed, 0.1 means 10% of the element is in view
+    triggerOnce: false, // Set to false to trigger every time it comes into view
+    threshold: 0.5, // Adjust as needed, 0.1 means 10% of the element is in view
   });
 
   const [springs, api] = useSpring(() => ({
     from: { 
-      x: -100, 
+      x: -30, 
       opacity: 0
     },
     to: { 
       x: 0, 
       opacity: 1
     },
-    config: { duration: 500 }, // Adjust the duration as needed
+    config: { duration: 600 }, // Adjust the duration as needed
   }));
 
   useEffect(() => {
     if (inView) {
       api.start({
-        from: { left: -100, opacity: 0 },
-        to: { left: 0, opacity: 1},
+        from: { x: -30, opacity: 0 },
+        to: { x: 0, opacity: 1},
       });
     }
   }, [inView, api]);
@@ -34,7 +34,7 @@ const Home = ({t}) => {
   return (
     <div className='home'>
         <div className="home_inner_wrapper">
-          <animated.div style={{...springs}} className="text_content">
+          <animated.div ref={ref} style={{...springs}} className="text_content">
             <h2 id='hero_heading'>{t('hero_heading')}</h2>
             <h2 id='hero_subheading'>{t('hero_subheading')}</h2>
             <p id='hero_text'>{t('hero_text')}</p>
