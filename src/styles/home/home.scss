@@ -61,7 +61,7 @@ div.home {
             position: relative;
             width: 200px;
             height: 60px;
-            border-radius: 3px;
+            border-radius: 12px;
 
             & > span {
                 background-clip: text;
@@ -87,7 +87,7 @@ div.home {
                 top: 0;
                 z-index: -1;
                 content: '';
-                border-radius: 3px;
+                border-radius: 12px;
                 background-image: linear-gradient(to right, var(--navbar-primary-color) 10%, var(--gradient-secondary-color));
             }
 
