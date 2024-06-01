@@ -1,9 +1,33 @@
+import { useSpring, animated } from "@react-spring/web";
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
+
+
 const Project = ({t, project}) => {
 
     const { img_url, title, description, technologies, github_url, live_demo_url } = project;
 
+  const {ref, inView} = useInView({
+    triggerOnce: false,
+    threshold: 0.1
+  })
+
+  const [fadeIn, api] = useSpring(() => ({
+    from: {opacity: 0},
+    to: {opacity: 1}
+  }))
+
+  useEffect(() => {
+    if(inView) {
+      api.start({
+        from: {opacity: 0},
+        to: {opacity: 1}
+      })
+    }
+  }, [inView, api])
+
     return (
-      <div className='project'>
+      <animated.div styles={{...fadeIn}} ref={ref} className='project'>
         <div className="project_inner_wrapper">
           
           <div className="img_preview">
@@ -12,8 +36,8 @@ const Project = ({t, project}) => {
 
           <div className="project_text">
             <h2>{title}</h2>
-            <p>{description}</p>
-            <p>{t('technologies')}: {technologies.join(', ')}</p>  
+            <p id='description'>{description}</p>
+            <p id='technologies'>{t('technologies')}: {technologies.join(', ')}</p>  
           </div>
           
           <div className="project_actions">
@@ -21,7 +45,7 @@ const Project = ({t, project}) => {
               <a href={github_url} target="blank">Github Code</a>
           </div>
         </div>
-      </div>
+      </animated.div>
     )
 }
 

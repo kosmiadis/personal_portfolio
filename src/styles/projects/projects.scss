@@ -1,1 +1,26 @@
 @import url('./project.scss');
+
+div.projects {
+    display: flex;
+    flex-direction: column;    
+    width: 100%;
+    gap: 60px;
+
+    & h2 {
+        width: 80%;
+        margin-inline: auto;
+        text-align: left;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    div.projects {
+        grid-template-columns: repeat(3, auto);
+        grid-template-rows: max-content;
+        
+        & h2 {
+            grid-column-start: 1;
+            grid-column-end: -1;
+        }
+    }
+}

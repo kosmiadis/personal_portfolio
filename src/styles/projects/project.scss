@@ -1,0 +1,107 @@
+div.project {
+    margin-inline: auto;
+    width: 90%;
+    max-width: 350px;
+    height: 550px;
+    background-image: linear-gradient(to right, var(--gradient-primary-color), var(--gradient-secondary-color));
+    position: relative;
+    padding: 3px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+
+    & div.project_inner_wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: var(--body-bg-color);
+        padding: 2rem;
+        border-radius: inherit;
+
+        & div.img_preview {
+            width: 100%;
+
+            & img {
+                width: 100%;
+                border-radius: 3px;
+            }
+        }
+
+        & div.project_text {
+
+            & h2 {
+                font-size: 1.2rem;
+            }
+
+            & p#description {
+                font-size: 1rem;
+                
+            }
+
+            & p#technologies {
+                font-size: .9rem;
+                font-style: italic;
+            }
+        }
+
+        & div.project_actions {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+
+            & a {
+                text-decoration: none;
+                padding: 15px 22px;
+                font-size: 0.8rem;
+                font-weight: 600;
+                color: white;
+                border-radius: 25px; 
+                position: relative;
+                transition: 0.3s ease-in-out;
+                
+                &:nth-of-type(1)::before {
+                    z-index: -1;
+                    top: 0;
+                    left: 0;
+                    position: absolute;
+                    width: 0;
+                    background-color: white;
+                    border-radius: 12px;       
+                    content: '';
+                    transition: 0.3s ease-in-out;        
+                }
+
+                &:nth-of-type(1) {
+                    background-image: linear-gradient(to right, var(--gradient-primary-color), var(--gradient-secondary-color));
+                    
+                    &:hover {
+                        background-clip: text;
+                        -webkit-text-fill-color: transparent;
+
+                        &::before {
+                            cursor: pointer;
+                            width: 100%;
+                            z-index: 1;
+                        }
+                    }
+                }
+
+                &:nth-of-type(2) {
+                    border: 2px solid white;
+
+                    &:hover {
+                        background-color: white;
+                        color: var(--gradient-primary-color);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 769px) {
+    div.project {
+        margin-inline: initial;
+    }
+}

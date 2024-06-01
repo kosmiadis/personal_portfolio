@@ -47,6 +47,24 @@ function App() {
       technologies: ['HTML5', 'CSS', 'NodeJS', 'ExpressJS', 'EJS', 'Nodemailer'],
       github_url: 'https://github.com/kosmiadis/chalk59_website', 
       live_demo_url: 'https://chalk59website.up.railway.app'
+    },
+    {
+      id: 2,
+      img_url: './images/chalk59_img.png',
+      title: t('chalk59_project_title'),
+      description: t('chalk59_project_description'), 
+      technologies: ['HTML5', 'CSS', 'NodeJS', 'ExpressJS', 'EJS', 'Nodemailer'],
+      github_url: 'https://github.com/kosmiadis/chalk59_website', 
+      live_demo_url: 'https://chalk59website.up.railway.app'
+    },
+    {
+      id: 3,
+      img_url: './images/chalk59_img.png',
+      title: t('chalk59_project_title'),
+      description: t('chalk59_project_description'), 
+      technologies: ['HTML5', 'CSS', 'NodeJS', 'ExpressJS', 'EJS', 'Nodemailer'],
+      github_url: 'https://github.com/kosmiadis/chalk59_website', 
+      live_demo_url: 'https://chalk59website.up.railway.app'
     }
   ])
 
@@ -65,6 +83,24 @@ function App() {
         title: t('chalk59_project_title'), 
         description: t('chalk59_project_description'), 
         technologies: ['HTML5', 'CSS', 'NodeJS', 'ExpressJS', 'EJS', 'Nodemailer'], 
+        github_url: 'https://github.com/kosmiadis/chalk59_website', 
+        live_demo_url: 'https://chalk59website.up.railway.app'
+      },
+      {
+        id: 2,
+        img_url: chalk59_img_url,
+        title: t('chalk59_project_title'),
+        description: t('chalk59_project_description'), 
+        technologies: ['HTML5', 'CSS', 'NodeJS', 'ExpressJS', 'EJS', 'Nodemailer'],
+        github_url: 'https://github.com/kosmiadis/chalk59_website', 
+        live_demo_url: 'https://chalk59website.up.railway.app'
+      },
+      {
+        id: 3,
+        img_url: chalk59_img_url,
+        title: t('chalk59_project_title'),
+        description: t('chalk59_project_description'), 
+        technologies: ['HTML5', 'CSS', 'NodeJS', 'ExpressJS', 'EJS', 'Nodemailer'],
         github_url: 'https://github.com/kosmiadis/chalk59_website', 
         live_demo_url: 'https://chalk59website.up.railway.app'
       }
