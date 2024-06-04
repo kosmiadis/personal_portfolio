@@ -8,17 +8,18 @@
     }
 }
 
-
 div.home > * {
     color: white;
 }
 
 div.home {
-    outline: unset !important;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+
     div.home_inner_wrapper {
+        margin-top: -200px;
         width: 85%;
         max-width: 950px;
         height: min-content;
@@ -141,7 +142,6 @@ div.home {
 @media screen and (min-width: 769px) {
     div.home {
         div.home_inner_wrapper {
-            margin-top: 3rem;
             padding: 1rem;
             width: 90%;
             display: grid;

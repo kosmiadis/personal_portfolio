@@ -1,5 +1,10 @@
 const Navbar = ({t}) => {
 
+    const homeContainer = document.querySelector('.home')
+    const projectsContainer = document.querySelector('.projects')
+    const technologiesContainer = document.querySelector('.technologies')
+    const aboutContainer = document.querySelector('.about')
+
     window.addEventListener('resize', e => {
         const curtain_menu = document.querySelector('.curtain_menu')
         if (window.innerWidth > 769) {
@@ -29,10 +34,24 @@ const Navbar = ({t}) => {
         }, 200)
     }
 
-    const handleMenuOptionClick = () => {
+    const handleMenuOptionClick = (e) => {
+        let location = null
+        if (e.target.id === 'home') {
+            location = homeContainer
+        }
+        else if (e.target.id === 'projects') {
+            location = projectsContainer
+        }
+        else if (e.target.id === 'technologies') {
+            location = technologiesContainer
+        }
+        else {
+            location = aboutContainer
+        }
         if (window.innerWidth < 769) {
             handleCloseHamburger()
         }
+        location.scrollIntoView({behavior: 'smooth'})
     }
 
   return (
@@ -58,10 +77,10 @@ const Navbar = ({t}) => {
 
             <div className="navbar_actions_wrapper">
                 <ul>
-                    <li href='#home' onClick={handleMenuOptionClick}>{t('home')}</li>
-                    <li href='#portfolio' onClick={handleMenuOptionClick}>{t('portfolio')}</li>
-                    <li href='#technologies' onClick={handleMenuOptionClick}>{t('technologies')}</li>
-                    <li href='#about' onClick={handleMenuOptionClick}>{t('about')}</li>
+                    <li id='home' onClick={(e) => handleMenuOptionClick(e)}>{t('home')}</li>
+                    <li id='projects' onClick={(e) => handleMenuOptionClick(e)}>{t('portfolio')}</li>
+                    <li id='technologies' onClick={(e) => handleMenuOptionClick(e)}>{t('technologies')}</li>
+                    <li id='about' onClick={(e) => handleMenuOptionClick(e)}>{t('about')}</li>
                 </ul>
             </div>
 

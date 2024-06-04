@@ -134,10 +134,7 @@ div.navbar {
 @media screen and (min-width: 769px) {
 
     div.navbar {
-        position: sticky;
         background-color: var(--body-bg-color);
-        z-index: 10;
-        top: 0;
         padding: 1.4rem;
         margin-inline: auto;
         display: flex;

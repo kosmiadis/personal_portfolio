@@ -18,7 +18,8 @@ function App() {
     i18n.changeLanguage(lng);
   }
 
-
+  
+  
 
   const technologies = [
     {id: 1, name: 'HTML5', experience_perc: 100, experience_level: 'Advanced'},
