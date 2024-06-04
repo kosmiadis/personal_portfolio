@@ -1,0 +1,29 @@
+@import url(./technology.scss);
+
+div.technologies {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    div.technologies_inner_wrapper {
+        
+        div.technologies_heading {
+            width: 100%;
+
+            & h2 {
+                font-size: 1.4rem;
+                text-align: center;
+            }
+        }
+
+        div.technologies_container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    div.additional_technologies_wrapper {
+
+    }
+}
