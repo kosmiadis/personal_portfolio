@@ -1,9 +1,10 @@
 import dummyProfilePhoto from '../../../images/dummy_profile_photo.webp'
 import { useFadeInLeft } from "../../../animations";
+import { animated } from '@react-spring/web';
 
 const Home = ({t}) => {
   
-  const { ref, styles, animated } = useFadeInLeft();
+  const { ref, styles } = useFadeInLeft();
 
   return (
     <div className='home'>
