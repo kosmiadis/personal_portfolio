@@ -12,6 +12,9 @@
 body {
     margin: 0;
     background-color: var(--body-bg-color);
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
 }
 
 body > * {
@@ -23,6 +26,6 @@ body > * {
 div.home, div.projects, div.technologies, div.about {
     max-width: 1400px;
     margin: auto;
-    min-height: 100vh;
+    min-height: 70vh;
     font-family: poppins, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

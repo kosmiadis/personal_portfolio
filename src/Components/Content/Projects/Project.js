@@ -4,10 +4,10 @@ import { animated } from "@react-spring/web";
 const Project = ({t, project}) => {
 
   const { img_url, title, description, technologies, github_url, live_demo_url } = project;
-  const { ref, styles} = useFadeInLeft();
+  const { ref, styles } = useFadeInLeft();
 
     return (
-      <animated.div ref={ref} styles={{...styles}} className='project'>
+      <animated.div ref={ref} style={{...styles}} className='project'>
         <div className="project_inner_wrapper">
           
           <div className="img_preview">

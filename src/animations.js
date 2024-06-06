@@ -28,7 +28,7 @@ export const useFadeInLeft = () => {
     }, [inView, api])
     
 
-    return { ref, styles, animated };
+    return { ref, styles};
 };
 
 export const usePopUp = () => {
@@ -54,7 +54,32 @@ export const usePopUp = () => {
             api.start();
         }
     }, [inView, api])
-    
 
-    return { ref, styles, animated };
+    return { ref, styles};
+};
+
+
+export const useLoadDivWidth = (givenWidth) => {
+    const { ref, inView } = useInView({
+        triggerOnce: false,
+        threshold: 0.1,
+    });
+
+    const [styles, api] = useSpring(() => ({
+        from: { 
+          width: '0%'
+        },
+        to: { 
+          width: givenWidth 
+        },
+        config: { duration: 600 }, // Adjust the duration as needed
+    }));
+
+    useEffect(() => {
+        if (inView) {
+            api.start({ width: givenWidth });
+        }
+    }, [inView, api, givenWidth]);
+
+    return { ref, styles };
 };
