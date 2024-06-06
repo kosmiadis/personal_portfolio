@@ -1,85 +1,55 @@
-import { useSpring, animated } from '@react-spring/web';
-import { useInView } from 'react-intersection-observer';
-import { useEffect } from 'react';
+import { useSpring } from '@react-spring/web';
+
 
 
 export const useFadeInLeft = () => {
-    const { ref, inView } = useInView({
-        triggerOnce: false, 
-        threshold: 0.1,
-    });
 
-    const [styles, api] = useSpring(() => ({
+    const [useFadeInLeftStyles, api] = useSpring(() => ({
         from: { 
           x: -30, 
           opacity: 0
         },
-        to: { 
-          x: 0, 
-          opacity: 1
-        },
-        config: { duration: 600 }, // Adjust the duration as needed
+        config: { duration: 1000 }, // Adjust the duration as needed
     }));
 
-    useEffect(() => {
-        if (inView) {
-            api.start();
-        }
-    }, [inView, api])
-    
+    return { useFadeInLeftStyles, api};
+};
 
-    return { ref, styles};
+export const useFadeInRight = () => {
+
+    const [useFadeInRightStyles, right_api] = useSpring(() => ({
+        from: { 
+          x: 100, 
+          opacity: 0
+        },
+        config: { duration: 1000 }, // Adjust the duration as needed
+    }));
+
+    return { useFadeInRightStyles, right_api};
 };
 
 export const usePopUp = () => {
-    const { ref, inView } = useInView({
-        triggerOnce: false, 
-        threshold: 0.1,
-    });
 
-    const [styles, api] = useSpring(() => ({
-        from: { 
-          x: -30, 
-          opacity: 0
-        },
-        to: { 
-          x: 0, 
-          opacity: 1
-        },
-        config: { duration: 600 }, // Adjust the duration as needed
+    const [popUpStyles, api] = useSpring(() => ({
+        from: { opacity: 0 },
+        config: { duration: 1000 }
     }));
 
-    useEffect(() => {
-        if (inView) {
-            api.start();
-        }
-    }, [inView, api])
-
-    return { ref, styles};
+    return { popUpStyles, api};
 };
 
 
 export const useLoadDivWidth = (givenWidth) => {
-    const { ref, inView } = useInView({
-        triggerOnce: false,
-        threshold: 0.1,
-    });
 
-    const [styles, api] = useSpring(() => ({
+    const [useLoadDivWidthStyles, api] = useSpring(() => ({
         from: { 
           width: '0%'
         },
-        to: { 
-          width: givenWidth 
+        to: {
+          
         },
-        config: { duration: 600 }, // Adjust the duration as needed
+        config: { duration: 1000 }, // Adjust the duration as needed
     }));
 
-    useEffect(() => {
-        if (inView) {
-            api.start({ width: givenWidth });
-        }
-    }, [inView, api, givenWidth]);
-
-    return { ref, styles };
+    return { useLoadDivWidthStyles, api };
 };
