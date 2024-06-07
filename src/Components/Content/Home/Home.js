@@ -15,6 +15,29 @@ const Home = ({t}) => {
   const { useFadeInRightStyles, right_api } = useFadeInRight();
 
   useEffect(() => {
+    api.start({
+      from: { 
+        x: -30, 
+        opacity: 0
+      },
+      to: { 
+        x: 0,
+        opacity: 1,
+      },
+    })
+    right_api.start({
+      from: { 
+        x: 100, 
+        opacity: 0
+      },
+      to: {
+        x: 0,
+        opacity: 1,
+      }
+    })
+  })
+  
+  useEffect(() => {
     if(inView) {
       api.start({
         from: { 
@@ -42,7 +65,7 @@ const Home = ({t}) => {
         }
       })
     }
-  })
+  }, [inView, right_api])
   return (
     <div className='home'>
         <div className="home_inner_wrapper">
