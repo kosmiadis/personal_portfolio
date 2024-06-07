@@ -33,11 +33,11 @@ div.projects {
 
 @media screen and (min-width: 769px) {
     div.projects {
-
+        
         div.projects_wrapper {
             gap: unset;
             row-gap: 60px;
-            justify-content: space-between;
+            justify-content: space-around;
         }
     }
 }

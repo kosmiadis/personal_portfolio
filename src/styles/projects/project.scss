@@ -1,7 +1,7 @@
 div.project {
     margin-inline: auto;
-    width: 90%;
-    max-width: 350px;
+    width: 95%;
+    max-width: 320px;
     height: 550px;
     background-image: linear-gradient(to right, var(--gradient-primary-color), var(--gradient-secondary-color));
     position: relative;
@@ -54,48 +54,29 @@ div.project {
 
             & a {
                 text-decoration: none;
-                padding: 15px 22px;
-                font-size: 0.8rem;
-                font-weight: 600;
-                color: white;
+                padding: 15px;
+                width: 100%;
+                text-align: center;
+                font-size: 0.65rem;
+                font-weight: 900;
                 border-radius: 25px; 
                 position: relative;
-                transition: 0.3s ease-in-out;
+                transition: all 0.2s ease-in-out;
                 
-                &:nth-of-type(1)::before {
-                    z-index: -1;
-                    top: 0;
-                    left: 0;
-                    position: absolute;
-                    width: 0;
-                    background-color: white;
-                    border-radius: 12px;       
-                    content: '';
-                    transition: 0.3s ease-in-out;        
-                }
-
                 &:nth-of-type(1) {
-                    background-image: linear-gradient(to right, var(--gradient-primary-color), var(--gradient-secondary-color));
-                    
-                    &:hover {
-                        background-clip: text;
-                        -webkit-text-fill-color: transparent;
-
-                        &::before {
-                            cursor: pointer;
-                            width: 100%;
-                            z-index: 1;
-                        }
-                    }
+                    /*background-image: linear-gradient(to right, var(--gradient-primary-color), var(--gradient-secondary-color));*/
+                    background-color: var(--gradient-secondary-color);
+                    color: white;
                 }
 
                 &:nth-of-type(2) {
                     border: 2px solid white;
+                    color: white;
+                }
 
-                    &:hover {
-                        background-color: white;
-                        color: var(--gradient-primary-color);
-                    }
+                &:hover {
+                    background-color: white;
+                    color: var(--gradient-primary-color);
                 }
             }
         }
